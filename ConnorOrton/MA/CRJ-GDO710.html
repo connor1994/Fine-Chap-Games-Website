@@ -349,17 +349,17 @@
           <p class="text-left p-2 bg-primary">First, I had to make the blocks move and go out of bounds of the screen. I wrote a coroutine that fires a Raycast one block ahead of the first or last child depending on if the player is reversing or not, if the player hits a boundary layer they will reverse. I could have used triggers to track the collisions of the blocks, but I wanted to use a Raycast because firstly I don’t have much experience using Raycasts and it would be beneficial for my development process to get more experience with this element and secondly, I can control a Raycast more precisely than a trigger for example only wanting to gain hits in a specific direction rather than all around the block with a 2D box trigger.&nbsp;I also moved the boundaries out more so the player blocks can clip outside the grid like the arcade game as my main goal is realism. </p>
           <div class="col-md-12">
             <div class="row">
-              <div class="col-md-6"><img class="d-block img-fluid mx-auto w-100" src="https://i.ibb.co/1KzHBDS/Blocks-Moving.gif"></div>
-              <div class="col-md-6"><img class="d-block img-fluid pb-2 mx-auto w-75" src="https://i.ibb.co/nCCdy0p/Dev-Update-2.png"></div>
+              <div class="col-md-6"><img class="d-block w-100 mx-auto" src="https://i.ibb.co/1KzHBDS/Blocks-Moving.gif"></div>
+              <div class="col-md-6"><img class="d-block img-fluid mx-auto w-75" src="https://i.ibb.co/nCCdy0p/Dev-Update-2.png"></div>
             </div>
-            <p class="text-left bg-primary p-2 border border-dark mt-2">Basic movement and reversing an the player block intentionally going out of bounds to promote realism.</p>
+            <p class="text-left bg-primary p-2 border border-dark">Basic movement and reversing an the player block intentionally going out of bounds to promote realism.</p>
           </div>
           <p class="text-left p-2 bg-primary" style="">Next, I achieved stacking of blocks by having the next spawned block become the active player block and have each block child do a Raycast beneath them to check if there is a block beneath them, if not they will fall to the ground using a coroutine and play a lose animation like the arcade game. To demonstrate how I utilized a Raycast the gif below will show the debug lines that the ray fires in order to perform hit checks. Again, I could have used triggers here attached to the block to check when it collides with another block, but I wanted to stay with using Raycasts, this way my code is cleaner and more consistent.</p>
           <div class="row">
-            <div class="col-md-6"><img class="d-block img-fluid mx-auto w-100" src="https://i.ibb.co/wCdB5Tr/loseblocks.gif"></div>
-            <div class="col-md-6"><img class="d-block img-fluid pb-2 mx-auto w-100" src="https://i.ibb.co/Nm0bKqG/raycastdebug.gif"></div>
+            <div class="col-md-6 py-4"><img class="d-block mx-auto w-100" src="https://i.ibb.co/wCdB5Tr/loseblocks.gif"></div>
+            <div class="col-md-6"><img class="d-block img-fluid mx-auto w-100" src="https://i.ibb.co/Nm0bKqG/raycastdebug.gif"></div>
           </div>
-          <p class="text-left bg-primary p-2 border border-dark mt-2">Player losing blocks and moving and falling raycast demonstration.</p>
+          <p class="text-left bg-primary p-2 border border-dark">Player losing blocks and moving and falling raycast demonstration.</p>
           <h3 class="text-center bg-secondary p-2 mt-2">Prototype: Result</h3>
           <p class="text-left p-2 bg-primary">I have managed to fully recreate Stacker arcade using a grid, blocks, Raycasts and coroutines. I have replicated the rules and the animations for a classic mode with plans to create an endless mode to create a gameplay twist to differentiate it from the original game. Everything has gone well but if there is one element, I would like to change it would be to rebalance the difficulty, as it stands the speed has 3 settings, a slow speed when you have 3 blocks, a medium speed when you have 2 blocks and a fast speed when you have 1 block. I think that instead of having it this way the speed should gradually increase making the game increasingly difficult the more the player stacks a block. Also, due to time constraints I did not manage to match up the lives of the blocks to those on the game menu and this is another element that I would like to change going forward. Overall, the reconstruction went well but for next time I would like to make the game more difficult and make it more featureful.</p><img class="d-block img-fluid pb-2 mx-auto w-50" src="https://i.ibb.co/T0XC7DN/Dev-Update-5.png">
         </div>
@@ -371,7 +371,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <h3 class="text-center bg-secondary p-2 mt-2" style="">References</h3>
+          <h3 class="text-center bg-secondary p-2" style="">References</h3>
           <p class="text-left p-2 bg-primary">TBD.</p>
         </div>
       </div>
