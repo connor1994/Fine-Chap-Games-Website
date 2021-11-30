@@ -306,7 +306,7 @@
           <h3 class="text-center bg-secondary p-2">Pirate Jam</h3><img class="d-block mx-auto img-fluid w-75" src="https://i.ibb.co/GPcDhNV/pirate-jam.png">
           <p class="text-left bg-primary p-2 border border-dark">Source: http://www.pirate-jam.com/ </p>
           <h3 class="text-center bg-secondary p-2">Challenge Activity</h3>
-          <p class="text-left p-2 bg-primary" contenteditable="true"></p>
+          <p class="text-left p-2 bg-primary">For this week’s challenge activity, I have been tasked with reverse engineering an interesting aspect of an artefact and reverse engineer it to make a prototype using prototyping techniques. I have chosen to reverse engineer a video game as this will be the most beneficial for my development practices. I have chosen to make a 2D game in the Unity engine and writing the scripts in the C# programming language. I have chosen to recreate the arcade game ‘Stacker’ which is featured on arcade machines in pubs and arcades and recreate it into video game to be accessible on android mobile devices.&nbsp;<br><br>Choosing to recreate Stacker will be beneficial for me as a games developer as I will improve my skills as a programmer in the aspect of gameplay programming. The reason that I have chosen this arcade game to recreate is because in 2015 I released a game on the Google Play store called Dash and Stack that I developed with a co-developer and as of 2021 it has been removed from the store due to its low API version. Dash and Stack is an android arcade game that recreates Stacker with game mode twists such as the classic mode, and endless mode and many more. I have since made plans to remake the game in higher definition targeting higher API android devices to republish and I have been given the full go ahead by my previous co-developer to create every aspect of the game including the gameplay that I did not write in the original release.&nbsp;</p>
           <h3 class="text-center bg-secondary p-2 mt-2">Stacker Arcade Trailer</h3>
         </div>
       </div>
@@ -325,19 +325,48 @@
       <div class="row">
         <div class="col-md-12">
           <h3 class="text-center bg-secondary p-2 mt-2">Prototype: Design</h3>
-          <p class="text-left p-2 bg-primary">TBD.</p>
+          <p class="text-left p-2 bg-primary">For the design of the Stacker prototype, I have created a digital storyboard of the stacker arcade game and how the gameplay mechanics work in general. The rules of the game are the player must stack blocks and reach the top of the grid without losing all of them. Depending on the position of the player the game will set the maximum number of blocks and movement speed. For my game this is called Classic Mode as it retains all the rules of the original arcade game but to put a twist on the classic mode, I have created a game mode called Endless where the player can endlessly stack blocks and increase a counter so they can achieve a high score. I have made this mode as its generally considered bad practice to copy a game in its entirety so to make my game unique I had to put at twist on the existing formula for players to find an interest in the game.</p><img class="d-block mx-auto img-fluid w-50" src="https://i.ibb.co/nkGsW2b/Dash-Storyboard.png">
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <h3 class="text-center bg-secondary p-2 mt-2">Prototype: Final Result</h3>
-          <p class="text-left p-2 bg-primary">TBD.</p>
+          <p class="text-left bg-primary p-2 border border-dark" contenteditable="true">A digital storyboard showcasing the game mechanics of the Stacker arcade game.</p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
+          <h3 class="text-center bg-secondary p-2 mt-2">Prototype: Development</h3>
+          <p class="text-left p-2 bg-primary">Before being tasked with this challenge I had already created a main menu scene and have created the game board and in-game menu, which is everything apart from the gameplay mechanics.</p>
+          <div class="row">
+            <div class="col-md-6"><img class="d-block mx-auto img-fluid w-50" src="https://i.ibb.co/CWw9Scn/menu.png"></div>
+            <div class="col-md-6 py-2"><img class="d-block mx-auto img-fluid w-50" src="https://i.ibb.co/k1FZQdj/Game-Board.png"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-left bg-primary p-2 border border-dark mt-2">The main menu and game board setup for the Dash and Stack game for android devices.</p>
+          <p class="text-left p-2 bg-primary">First, I had to make the blocks move and go out of bounds of the screen. I wrote a coroutine that fires a Raycast one block ahead of the first or last child depending on if the player is reversing or not, if the player hits a boundary layer they will reverse. I could have used triggers to track the collisions of the blocks, but I wanted to use a Raycast because firstly I don’t have much experience using Raycasts and it would be beneficial for my development process to get more experience with this element and secondly, I can control a Raycast more precisely than a trigger for example only wanting to gain hits in a specific direction rather than all around the block with a 2D box trigger.&nbsp;I also moved the boundaries out more so the player blocks can clip outside the grid like the arcade game as my main goal is realism. </p>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6"><img class="d-block img-fluid mx-auto w-100" src="https://i.ibb.co/1KzHBDS/Blocks-Moving.gif"></div>
+              <div class="col-md-6"><img class="d-block img-fluid pb-2 mx-auto w-75" src="https://i.ibb.co/nCCdy0p/Dev-Update-2.png"></div>
+            </div>
+            <p class="text-left bg-primary p-2 border border-dark mt-2">Basic movement and reversing an the player block intentionally going out of bounds to promote realism.</p>
+          </div>
+          <p class="text-left p-2 bg-primary" style="">Next, I achieved stacking of blocks by having the next spawned block become the active player block and have each block child do a Raycast beneath them to check if there is a block beneath them, if not they will fall to the ground using a coroutine and play a lose animation like the arcade game. To demonstrate how I utilized a Raycast the gif below will show the debug lines that the ray fires in order to perform hit checks. Again, I could have used triggers here attached to the block to check when it collides with another block, but I wanted to stay with using Raycasts, this way my code is cleaner and more consistent.</p>
+          <div class="row">
+            <div class="col-md-6"><img class="d-block img-fluid mx-auto w-100" src="https://i.ibb.co/wCdB5Tr/loseblocks.gif"></div>
+            <div class="col-md-6"><img class="d-block img-fluid pb-2 mx-auto w-100" src="https://i.ibb.co/Nm0bKqG/raycastdebug.gif"></div>
+          </div>
+          <p class="text-left bg-primary p-2 border border-dark mt-2">Player losing blocks and moving and falling raycast demonstration.</p>
           <h3 class="text-center bg-secondary p-2 mt-2">Prototype: Result</h3>
-          <p class="text-left p-2 bg-primary">TBD.</p>
+          <p class="text-left p-2 bg-primary">I have managed to fully recreate Stacker arcade using a grid, blocks, Raycasts and coroutines. I have replicated the rules and the animations for a classic mode with plans to create an endless mode to create a gameplay twist to differentiate it from the original game. Everything has gone well but if there is one element, I would like to change it would be to rebalance the difficulty, as it stands the speed has 3 settings, a slow speed when you have 3 blocks, a medium speed when you have 2 blocks and a fast speed when you have 1 block. I think that instead of having it this way the speed should gradually increase making the game increasingly difficult the more the player stacks a block. Also, due to time constraints I did not manage to match up the lives of the blocks to those on the game menu and this is another element that I would like to change going forward. Overall, the reconstruction went well but for next time I would like to make the game more difficult and make it more featureful.</p><img class="d-block img-fluid pb-2 mx-auto w-50" src="https://i.ibb.co/T0XC7DN/Dev-Update-5.png">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-left bg-primary p-2 border border-dark mt-2">The game in its complete state with all blocks stacked to the top.</p>
         </div>
       </div>
       <div class="row">
