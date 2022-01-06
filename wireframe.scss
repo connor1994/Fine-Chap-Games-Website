@@ -50,13 +50,15 @@ $headings-font-weight: 200;
 $headings-font-weight: $font-weight-normal;
 $lead-font-size:   1.30rem;
 $lead-font-weight:   300;
-$spacer: 1.5rem;
+
 $font-size-base: 1.5rem;
 $font-weight-light: 300;
 $font-weight-bold: 700;
 $font-weight-base: $font-weight-normal;
 $line-height-base: 1.5;
 $headings-line-height: 1.2;
+$spacer: 1.5rem;
+
 
 
 @import 'bootstrap-4.1.3';
