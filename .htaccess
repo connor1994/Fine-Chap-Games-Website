@@ -1,1 +1,2 @@
-redirectMatch 301 ^(.*)\.html $1
+RewriteEngine On
+RewriteRule ^(\w+)\.html$ /$1 [R=301,L]
